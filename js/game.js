@@ -70,14 +70,19 @@
     level = 0;
     gamePattern = [];
     userClickedPattern = [];
-    var keyPressCount = 0;
-    $(document).on("keydown", function() {
-      keyPressCount++;
-      if (keyPressCount === 1) {
-        nextSequence();
-      }
 
-    });
+    setTimeout(function() {
+      var keyPressCount = 0;
+      $(document).on("click", function() {
+        keyPressCount++;
+        if (keyPressCount === 1) {
+          nextSequence();
+        }
+
+      });
+
+    }, 2000);
+
 
   }
 
@@ -97,7 +102,7 @@
   // });
 
   var keyPressCount = 0;
-  $(document).on("keydown", function() {
+  $(document).on("click", function() {
     keyPressCount++;
     if (keyPressCount === 1) {
       nextSequence();
