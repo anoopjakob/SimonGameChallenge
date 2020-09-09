@@ -19,7 +19,7 @@
     $("#" + currentColor).addClass("pressed");
     setTimeout(function() {
       $("#" + currentColor).removeClass("pressed");
-    }, 100);
+    }, 150);
   }
 
   function nextSequence() {
@@ -27,7 +27,7 @@
     randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
 
-    $("#" + randomChosenColor).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(50);
+    $("#" + randomChosenColor).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
     playsound(randomChosenColor);
 
     $("h1").text("level " + level);
@@ -70,18 +70,10 @@
     level = 0;
     gamePattern = [];
     userClickedPattern = [];
-
     setTimeout(function() {
-      var keyPressCount = 0;
-      $(document).on("click", function() {
-        keyPressCount++;
-        if (keyPressCount === 1) {
-          nextSequence();
-        }
-
-      });
-
+      keyPressCount = 0;
     }, 2000);
+
 
 
   }
@@ -96,10 +88,8 @@
 
 
   });
-  //
-  // $(document).keypress(function(e) {
-  //   nextSequence();
-  // });
+
+
 
   var keyPressCount = 0;
   $(document).on("click", function() {
